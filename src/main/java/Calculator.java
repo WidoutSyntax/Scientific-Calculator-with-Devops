@@ -19,6 +19,8 @@ public class Calculator {
                             "0. Exit\n" +
                             "\nEnter your choice: ");
             int ch;
+            double num, num1, num2;
+            int number;
             try {
                 ch = scanner.nextInt();
             } catch (InputMismatchException error) {
@@ -26,16 +28,26 @@ public class Calculator {
             }
             switch (ch) {
                 case 1:
-                    calculator.sqrt();
+                    System.out.print("Enter number : ");
+                    num = scanner.nextDouble();
+                    System.out.println("Square root of " + num + " = " + calculator.sqrt(num));
                     break;
                 case 2:
-                    calculator.fact();
+                    System.out.print("Enter number : ");
+                    number = scanner.nextInt();
+                    System.out.println("Factorial of " + number + " = " + calculator.fact(number));
                     break;
                 case 3:
-                    calculator.nlog();
+                    System.out.print("Enter number : ");
+                    num = scanner.nextDouble();
+                    System.out.println("Natural Log of " + num + " = " + calculator.nlog(num));
                     break;
                 case 4:
-                    calculator.power();
+                    System.out.print("Enter number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.print("Enter power number : ");
+                    num2 = scanner.nextDouble();
+                    System.out.println(num1 + " to the power " + num2 + " = " + calculator.power(num1, num2));
                     break;
                 default:
                     System.out.println("Exiting...");
@@ -45,43 +57,26 @@ public class Calculator {
         } while (true);
     }
 
-    public void sqrt()
+    public double sqrt(double num)
     {
-        double num;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number : ");
-        num = scanner.nextDouble();
-        System.out.println("Square root of " + num + " = " + Math.sqrt(num));
+        return Math.sqrt(num);
     }
 
-    public void fact() {
-        double num;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number : ");
-        num = scanner.nextDouble();
+    public int fact(int num) {
         int ans = 1;
         for(int i=1;i<=num;i++)
             ans = ans * i;
-        System.out.println("Factorial of " + num + " = " + ans);
+        return ans;
     }
 
-
-    public void nlog() {
-        double num;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number : ");
-        num = scanner.nextDouble();
-        System.out.println("Natural Log of " + num + " = " + Math.log(num));
+    public double nlog(double num)
+    {
+        return Math.log(num);
     }
 
-    public void power() {
-        double num1, num2;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number : ");
-        num1 = scanner.nextDouble();
-        System.out.print("Enter power number : ");
-        num2 = scanner.nextDouble();
-        System.out.println(num1 + " to the power " + num2 + " = " + Math.pow(num1, num2));
+    public double power(double num1, double num2)
+    {
+        return Math.pow(num1, num2);
     }
 }
 
