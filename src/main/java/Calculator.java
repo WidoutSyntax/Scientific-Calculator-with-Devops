@@ -1,7 +1,12 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Calculator {
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
+
     public Calculator()
     {
 
@@ -59,24 +64,35 @@ public class Calculator {
 
     public double sqrt(double num)
     {
-        return Math.sqrt(num);
+        logger.info("[SQUAREROOT] - " + num);
+        double res = Math.sqrt(num);
+        logger.info("[RESULT - SQUAREROOT] - " + res);
+        return res;
     }
 
     public int fact(int num) {
-        int ans = 1;
+        logger.info("[FACTORIAL] - " + num);
+        int res = 1;
         for(int i=1;i<=num;i++)
-            ans = ans * i;
-        return ans;
+            res = res * i;
+        logger.info("[RESULT - FACTORIAL] - " + res);
+        return res;
     }
 
     public double nlog(double num)
     {
-        return Math.log(num);
+        logger.info("[LOGBASEE] - " + num);
+        double res = Math.log(num);
+        logger.info("[RESULT - LOGBASEE] - " + res);
+        return res;
     }
 
     public double power(double num1, double num2)
     {
-        return Math.pow(num1, num2);
+        logger.info("[POWER] - " + num1 + ", " + num2);
+        double res = Math.pow(num1, num2);
+        logger.info("[RESULT - POWER] - " + res);
+        return res;
     }
 }
 
