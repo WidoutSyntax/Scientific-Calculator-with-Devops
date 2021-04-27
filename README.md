@@ -14,3 +14,5 @@
 5. Deployment: Docker, Rundeck, Jenkins
 6. Monitoring: ELK stack
 ```
+
+Do refer a document Refer.pdf to get an in-depth understanding.
